@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -237,4 +238,245 @@
     }
     </script>
     </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+	Author: Lama Abdelhamid
+	Project: MatchmakerWeb
+
+	All Rights Reserved.
+-->
+
+<head>
+	<meta charset="UTF-8">
+	<title>Health Insurance Risk Calculator</title>
+</head>
+
+<body>
+    <h1>Health Insurance Risk Calculator for the Web</h1>
+
+    <h2>Calculate Your Risk Factor</h2>
+
+    <p>Instructions: Selection an option from the drop down menu in answer to the questions. Once you have gone through all of
+        the selections click on the "Calculate My Risk Factor" button. Once you have done that you will be able to determine
+        how at risk your health is. 
+    </p>
+
+    <div>
+        <label>Select the option that represents your age</label>
+        <select id ="a1">
+            <option value="0">under 30</option>
+            <option value="10">30-44</option>
+            <option value="20">45-59</option>
+            <option value="30">over 60</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Select the option that represents your height in</label>
+        <label>ft</label>
+        <select id="h1">
+            <option value="12">1</option>
+            <option value="24">2</option>
+            <option value="36">3</option>
+            <option value="48">4</option>
+            <option value="60">5</option>
+            <option value="72">6</option>
+            <option value="84">7</option>
+            <option value="96">8</option>
+            <option value="108">9</option>
+        </select>
+
+        <label>in</label>
+        <select id="h2">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Select the option that represents your weight in</label>
+        <label>lbs</label>
+        <select id="w1">
+            <option value="0">0</option>
+            <option value="100">1</option>
+            <option value="200">2</option>
+            <option value="300">3</option>
+            <option value="400">4</option>
+        </select>
+        <label></label>
+        <select id="w2">
+            <option value="0">0</option>
+            <option value="10">1</option>
+            <option value="20">2</option>
+            <option value="30">3</option>
+            <option value="20">4</option>
+            <option value="50">5</option>
+            <option value="60">6</option>
+            <option value="70">7</option>
+            <option value="80">8</option>
+            <option value="90">9</option>
+        </select>
+        <label></label>
+        <select id="w3">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+        </select>
+        </div>
+
+        <div>
+            <label>Select your blood pressure in mm Hg in order of systolic then diastolic</label>
+        <select id="bp1">
+            <option value="0">below 120, over 80 </option>
+            <option value="15">120-129, below 80</option>
+            <option value="30">130-139, 80-89</option>
+            <option value="75">140 and above, 90 and above</option>
+            <option value="100">over 180, over 120</option>
+        </select>
+        </div>
+
+        <div>
+            <label>Select how many of these diseases(diabetes, alzheimers, cancer) run in your family</label>
+        <select id="d1">
+            <option value="0">none of the options apply</option>
+            <option value="10">one of them apply</option>
+            <option value="20">two of them apply</option>
+            <option value="30">all three apply</option>
+        </select>
+        </div>
+
+        <button onclick="calcRisk()">Calculate My Risk Factor</button>"
+        <h3 id="total risk"></h3>
+
+    <script>
+    console.log("Calculating Risk factor...");
+
+    function calcRisk() {
+        console.log("calcRisk()");
+
+        let age = Number(document.getElementById("a1").selectedOptions[0].value);
+
+        let heightft = Number(document.getElementById("h1").selectedOptions[0].value);
+        let heightin = Number(document.getElementById("h2").selectedOptions[0].value);
+
+        let weightone = Number(document.getElementById("w1").selectedOptions[0].value);
+        let weighttwo = Number(document.getElementById("w2").selectedOptions[0].value);
+        let weightthree = Number(document.getElementById("w3").selectedOptions[0].value);
+
+        let bloodpr = Number(document.getElementById("bp1").selectedOptions[0].value);
+
+        let disease = Number(document.getElementById("d1").selectedOptions[0].value);
+
+        let totalHeight = heightft + heightin;
+        let totalWeight = weightone = weighttwo = weightthree;
+
+        console.log("Question 1 Answers: age");
+	    console.log(document.getElementById("a1").selectedOptions[0].text);
+	    console.log(document.getElementById("a1").selectedOptions[0].value);
+
+        console.log("Question 2 Answers: height feet");
+	    console.log(document.getElementById("h1").selectedOptions[0].text);
+	    console.log(document.getElementById("h1").selectedOptions[0].value);
+	
+        console.log("Question 2 Answers: height inches");
+	    console.log(document.getElementById("h2").selectedOptions[0].text);
+	    console.log(document.getElementById("h2").selectedOptions[0].value);
+
+        console.log("Question 2 Answers: total inches");
+        console.log(totalHeight);
+
+        console.log("Question 3 Answers: weight hundreds");
+	    console.log(document.getElementById("w1").selectedOptions[0].text);
+	    console.log(document.getElementById("w1").selectedOptions[0].value);
+
+        console.log("Question 3 Answers: weight tens");
+	    console.log(document.getElementById("w2").selectedOptions[0].text);
+	    console.log(document.getElementById("w2").selectedOptions[0].value);
+
+        console.log("Question 3 Answers: weight ones");
+	    console.log(document.getElementById("w3").selectedOptions[0].text);
+	    console.log(document.getElementById("w3").selectedOptions[0].value);
+
+        console.log("Question 3: total weight");
+        console.log(totalWeight);
+
+        console.log("Question 4 Answers: blood pressure");
+	    console.log(document.getElementById("bp1").selectedOptions[0].text);
+	    console.log(document.getElementById("bp1").selectedOptions[0].value);
+
+        console.log("Question 4 Answers: disease");
+	    console.log(document.getElementById("d1").selectedOptions[0].text);
+	    console.log(document.getElementById("d1").selectedOptions[0].value);
+
+        let heightM = totalHeight * 0.0254
+        let weightK = totalWeight * 0.453592
+
+        console.log("Metric");
+        console.log(heightM + "Meters");
+        console.log(weightK + "Kg");
+
+        let BMI = weightK / Math.pow(heightM, 2)
+        console.log("BMI")
+        console.log(BMI);
+
+        if (BMI >= 18.5 && BMI <= 29.9) {
+            BMIvalue = 0}
+        else if (BMI >= 25.0 && BMI <= 29.9) {
+            BMIvalue = 30}
+        else 
+            {BMIvalue = 75}
+
+        console.log("Age Value Points");
+        console.log(age);
+
+        console.log("BMI Value Points");
+        console.log(BMIvalue);
+
+        console.log("Blood Pressure Value Points");
+        console.log(bloodpr);
+
+        console.log("Disease Value Points");
+        console.log(disease);
+
+        // Risk Value
+            let totalrisk = age + BMIvalue + bloodpr + disease
+            
+            console.log("Total Risk Factor");
+            console.log(totalrisk);
+
+        // If/then
+        if (totalrisk <= 20) {
+            risk = "Your Risk Factor is " + totalrisk + " you have a low risk factor"}
+        else if (totalrisk <= 50) {
+            risk = "Your Risk Factor is " + totalrisk + " you have a moderate risk factor"}
+        else if (totalrisk <= 75) {
+            risk = "Your Risk Factor is " + totalrisk + " you have a high risk factor"}
+        else {
+            risk = "Your Risk Value is " + totalrisk + " you are uninsurable"}
+
+
+    }
+    </script>
+    </body>
+>>>>>>> 010cc9418305c1f2c0edbd65d324f77d6e74ce83
     </html>

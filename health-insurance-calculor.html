@@ -124,7 +124,7 @@
         </select>
         </div>
 
-        <button onclick="calcRisk()">Calculate My Risk Factor</button>"
+        <button onclick="calcRisk()">Calculate My Risk Factor</button>
         <h3 id="total risk"></h3>
 
     <script>
@@ -232,6 +232,9 @@
             risk = "Your Risk Factor is " + totalrisk + " you have a high risk factor"}
         else {
             risk = "Your Risk Value is " + totalrisk + " you are uninsurable"}
+ 
+        console.log(risk)
+        document.getElementById("total risk").innerHTML = "Your BMI = " + BMIvalue + " and " + risk;
     }
     </script>
     </body>
